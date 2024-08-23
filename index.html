@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play The Farts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #222;
+            color: #fff;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .soundboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 20px;
+            width: 80%;
+            max-width: 800px;
+        }
+        .soundboard button {
+            padding: 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .soundboard button:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Play The Farts</h1>
+    <div class="soundboard">
+        <button onclick="playSound('fart1')">Fart 1</button>
+        <button onclick="playSound('fart2')">Fart 2</button>
+        <button onclick="playSound('fart3')">Fart 3</button>
+        <button onclick="playSound('fart4')">Fart 4</button>
+        <!-- Add more buttons as needed -->
+    </div>
+    <audio id="fart1" src="sounds/fart1.mp3"></audio>
+    <audio id="fart2" src="sounds/fart2.mp3"></audio>
+    <audio id="fart3" src="sounds/fart3.mp3"></audio>
+    <audio id="fart4" src="sounds/fart4.mp3"></audio>
+
+    <script>
+        function playSound(fartId) {
+            document.getElementById(fartId).play();
+        }
+    </script>
+</body>
+</html>
