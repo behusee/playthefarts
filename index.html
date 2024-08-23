@@ -6,59 +6,55 @@
     <title>Play The Farts</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #222;
-            color: #fff;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         h1 {
-            font-size: 3em;
+            font-size: 4rem;
             margin-bottom: 20px;
         }
-        .soundboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 20px;
-            width: 80%;
-            max-width: 800px;
-        }
-        .soundboard button {
-            padding: 20px;
-            font-size: 1.2em;
+        button {
+            width: 200px;
+            padding: 15px;
+            margin: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
             border: none;
             border-radius: 5px;
-            background-color: #555;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            background-color: #ffcc00;
+            color: #333;
         }
-        .soundboard button:hover {
-            background-color: #777;
+        button:hover {
+            background-color: #ff9900;
         }
     </style>
 </head>
 <body>
-    <h1>Play The Farts</h1>
-    <div class="soundboard">
-        <button onclick="playSound('fart1')">Fart 1</button>
-        <button onclick="playSound('fart2')">Fart 2</button>
-        <button onclick="playSound('fart3')">Fart 3</button>
-        <button onclick="playSound('fart4')">Fart 4</button>
-        <!-- Add more buttons as needed -->
+    <div class="container">
+        <h1>Play The Farts</h1>
+        <button onclick="playSound('fart-145914.mp3')">Fart 1</button>
+        <button onclick="playSound('fart-9-228245.mp3')">Fart 2</button>
+        <button onclick="playSound('fart-noises-83359.mp3')">Fart 3</button>
+        <button onclick="playSound('funny-fart-216687.mp3')">Fart 4</button>
+        <button onclick="playSound('wet-fart-6139.mp3')">Fart 5</button>
+        <button onclick="playSound('fart-145914.mp3')">Fart 6</button>
     </div>
-    <audio id="fart1" src="sounds/fart1.mp3"></audio>
-    <audio id="fart2" src="sounds/fart2.mp3"></audio>
-    <audio id="fart3" src="sounds/fart3.mp3"></audio>
-    <audio id="fart4" src="sounds/fart4.mp3"></audio>
 
     <script>
-        function playSound(fartId) {
-            document.getElementById(fartId).play();
+        function playSound(filename) {
+            var audio = new Audio('sounds/' + filename);
+            audio.play();
         }
     </script>
 </body>
